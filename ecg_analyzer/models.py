@@ -13,6 +13,7 @@ class UserProfile(models.Model):
 
 class ECG(models.Model):
     date = models.DateTimeField(auto_now_add=True)
+    owner = models.ForeignKey(User, related_name="ecgs", on_delete=models.CASCADE)
 
 
 class Lead(models.Model):
@@ -25,7 +26,8 @@ class Lead(models.Model):
         return str(self.signal).split()
 
     def set_signal(self, signal_list):
-        self.signal = signal_list.join("")
+        signal_list = [str(i) for i in signal_list]
+        self.signal = ",".join(signal_list)
 
     def save(self, *args, **kwargs):
         if isinstance(self.signal, list):

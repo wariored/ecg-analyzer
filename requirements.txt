@@ -1,4 +1,4 @@
 django==5.0.0
 djangorestframework==3.14.0
-black="*"
-mypy="*"
+black
+mypy

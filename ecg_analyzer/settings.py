@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "ecg_analyzer" "rest_framework",
+    "rest_framework",
+    "rest_framework.authtoken",
+    "ecg_analyzer",
 ]
 
 MIDDLEWARE = [
@@ -125,6 +127,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
+        'rest_framework.authentication.SessionAuthentication',
         "rest_framework.authentication.TokenAuthentication",
     ],
 }
