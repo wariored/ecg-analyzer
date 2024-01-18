@@ -22,7 +22,7 @@ Follow these steps to get your development environment up and running:
    Run the following command to start the server:
 
    ```bash
-   make start-env```
+   make start-env
    
 2. **Run the project in a python env**
 
@@ -34,7 +34,8 @@ Follow these steps to get your development environment up and running:
 
     - In a Python env you can run the command 
     ```bash
-    python manage.py test```
+    python manage.py test
+    ```
 
     - Or you can directly the make command that will run them inside a docker container after running the command `env-start`
     ```bash
